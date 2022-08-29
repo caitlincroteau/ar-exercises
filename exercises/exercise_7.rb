@@ -36,11 +36,17 @@ puts @store7.valid?
 puts @store7.errors.full_messages
 
 #test employee errors
-@ben = Employee.new()
+@ben = Employee.new(hourly_rate: 12)
+@sara = Employee.new(hourly_rate: 50)
+
 puts "---example 1 employee related errors---"
 puts @ben.valid?
 puts @ben.errors.full_messages
 
 puts "---example 2 employee related errors---"
-#this works too. You are supplying the store id with variable @store1
-puts @store1.employees.create().errors.full_messages
+puts @sara.valid?
+puts @sara.errors.full_messages
+
+# puts "---example 2 employee related errors---"
+# #this works too. You are supplying the store id with variable @store1
+# puts @store1.employees.create().errors.full_messages
